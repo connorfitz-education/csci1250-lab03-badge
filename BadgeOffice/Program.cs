@@ -9,14 +9,14 @@
 
 //Section 1
 
-Console.Write("Welcome to the Badge Creator\n\nPlease enter your full name: ");
+Console.Write("Welcome to the Badge Creator, please respond to the prompts.\n\nFull name: ");
 
-string? fullName = Console.ReadLine().Trim();
+string fullName = Console.ReadLine().Trim();
 string lastName = fullName.Substring(fullName.IndexOf(" ")+1);
 string firstName = fullName.Substring(0, fullName.IndexOf(" ")-1);
 string username = (firstName.Substring(0,1) + lastName).ToLower();
 
-System.Console.WriteLine($"\nName on badge: {fullName.ToUpper()}");
+System.Console.WriteLine($"Name on badge: {fullName.ToUpper()}");
 System.Console.WriteLine($"Username: {username}");
 System.Console.WriteLine($"Initials: {firstName.Substring(0,1).ToUpper()}.{lastName.Substring(0,1).ToUpper()}.");
 System.Console.WriteLine($"Letters in last name: {lastName.Length}");
@@ -30,36 +30,30 @@ System.Console.WriteLine($"\nStudent ID: {studentID}");
 System.Console.WriteLine($"Student Locker: {studentLocker}");
 
 // Secion 3
-System.Console.Write("\nPlease enter your dorm's X coordinate: ");
+System.Console.Write("\nPlease respond to the following prompts:\n\n");
+System.Console.WriteLine("What are your Dorm Coordinates?");
+System.Console.Write("Dorm X: ");
 string? dormInputX = Console.ReadLine(); int dormX = Convert.ToInt32(dormInputX);
-
-System.Console.Write("\nPlease enter your dorm's Y coordinate: ");
+System.Console.Write("Dorm Y: ");
 string? dormInputY = Console.ReadLine(); int dormY = Convert.ToInt32(dormInputY);
-
-System.Console.Write("\nPlease enter your class's X coordinate: ");
+System.Console.WriteLine("What are your Class Coordinates?");
+System.Console.Write("Class X: ");
 string? classInputX = Console.ReadLine(); int classX = Convert.ToInt32(classInputX);
-
-System.Console.Write("\nPlease enter your class's Y coordinate: ");
+System.Console.Write("Class Y: ");
 string? classInputY = Console.ReadLine(); int classY = Convert.ToInt32(classInputY);
-
-System.Console.Write("\nPlease enter your walking speed (ft/s): ");
+System.Console.WriteLine("How fast do you walk?");
+System.Console.Write("Walking speed (ft/s): ");
 string? walkInput = Console.ReadLine();
 double walkSpeed = Convert.ToDouble(walkInput);
 
 double distance = Math.Sqrt(Math.Pow(classX - dormX, 2)+ Math.Pow(classY - dormY, 2));
-System.Console.WriteLine($"\nDorm X: {dormX}");
-System.Console.WriteLine($"Dorm Y: {dormY}");
-System.Console.WriteLine($"Class X: {classX}");
-System.Console.WriteLine($"Dorm X: {classY}");
-System.Console.WriteLine($"Walk speed: {walkSpeed}\n");
-System.Console.WriteLine($"Distance: {Math.Round(distance, 2)} feet");
+System.Console.WriteLine($"\nDistance: {Math.Round(distance, 2)} feet");
 int walkTimeMin = (int)distance/(int)walkSpeed/60;
-int walkTimeSec = (int)distance/(int)walkSpeed%60;
+double walkTimeSec = Math.Round(distance/walkSpeed%60, 0);
 
 System.Console.WriteLine($"Walk time: {walkTimeMin} minutes {walkTimeSec} seconds\n");
 
 // Section 4
-
 System.Console.WriteLine("==================================");
 System.Console.WriteLine("        ETSU STUDENT BADGE        ");
 System.Console.WriteLine("==================================\n");
