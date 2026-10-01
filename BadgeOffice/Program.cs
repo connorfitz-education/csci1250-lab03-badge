@@ -39,7 +39,8 @@ System.Console.WriteLine("What are your Dorm Coordinates?");
 
 System.Console.Write("Dorm X: ");
 string? dormInputX = Console.ReadLine();
-while(!dormInputX.All(char.IsDigit)){
+while(!dormInputX.All(char.IsDigit))
+{
     Console.Write("Please enter a valid integer\nDorm X: ");
     dormInputX = Console.ReadLine();
 }
@@ -47,7 +48,8 @@ int dormX = Convert.ToInt32(dormInputX);
 
 System.Console.Write("Dorm Y: ");
 string? dormInputY = Console.ReadLine();
-while(!dormInputY.All(char.IsDigit)){
+while(!dormInputY.All(char.IsDigit))
+{
     Console.Write("Please enter a valid integer\nDorm Y: ");
     dormInputY = Console.ReadLine();
 }
@@ -57,7 +59,8 @@ System.Console.WriteLine("What are your Class Coordinates?");
 
 System.Console.Write("Class X: ");
 string? classInputX = Console.ReadLine();
-while(!classInputX.All(char.IsDigit)){
+while(!classInputX.All(char.IsDigit))
+{
     Console.Write("Please enter a valid integer\nClass X: ");
     classInputX = Console.ReadLine();
 }
@@ -65,8 +68,9 @@ int classX = Convert.ToInt32(classInputX);
 
 System.Console.Write("Class Y: ");
 string? classInputY = Console.ReadLine();
-while(!classInputY.All(char.IsDigit)){
-    Console.Write("Please enter a valid integer\nClass X: ");
+while(!classInputY.All(char.IsDigit))
+{
+    Console.Write("Please enter a valid integer\nClass Y: ");
     classInputY = Console.ReadLine();
 }
 int classY = Convert.ToInt32(classInputY);
